@@ -20,16 +20,6 @@ variable "service_name" {
   description = "The prefix to use for docker_service resources in this module"
 }
 
-variable "data_volume_nfs_path" {
-  type        = string
-  description = "NFS path for local volume driver"
-}
-
-variable "data_volume_nfs_addr" {
-  type        = string
-  description = "NFS address for local volume driver"
-}
-
 variable "api_insecure" {
   type        = bool
   description = "Activate API directly on the entryPoint named traefik."

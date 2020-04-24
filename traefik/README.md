@@ -15,8 +15,6 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | api\_insecure | Activate API directly on the entryPoint named traefik. | `bool` | `false` | no |
 | args | Additional command arguments to pass traefik. https://docs.traefik.io/v2.0/reference/static-configuration/cli/ | `list(string)` | `[]` | no |
-| data\_volume\_nfs\_addr | NFS address for local volume driver | `string` | n/a | yes |
-| data\_volume\_nfs\_path | NFS path for local volume driver | `string` | n/a | yes |
 | docker\_socket\_proxy\_version | n/a | `string` | `"latest"` | no |
 | entrypoints\_web\_address | web Entry point address. | `string` | `":80"` | no |
 | providers\_docker\_exposed\_by\_default | Expose containers by default through Traefik. If set to false, containers that don't have a traefik.enable=true label will be ignored from the resulting routing configuration. | `bool` | `true` | no |
