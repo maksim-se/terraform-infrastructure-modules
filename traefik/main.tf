@@ -20,15 +20,6 @@ resource "docker_service" "traefik" {
 
       args = var.args
 
-      env = {
-        TRAEFIK_API_INSECURE                      = var.api_insecure
-        TRAEFIK_ENTRYPOINTS_WEB_ADDRESS           = var.entrypoints_web_address
-        TRAEFIK_PROVIDERS_DOCKER                  = "true"
-        TRAEFIK_PROVIDERS_DOCKER_NETWORK          = docker_network.traefik.name
-        TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT = var.providers_docker_exposed_by_default
-        TRAEFIK_PROVIDERS_DOCKER_SWARMMODE        = var.providers_docker_swarm_mode
-      }
-
       mounts {
         read_only = true
         target    = "/var/run/docker.sock"
