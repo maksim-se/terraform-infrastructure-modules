@@ -20,7 +20,7 @@ resource "docker_service" "traefik" {
 
       args = concat(
         [
-          "--api-insecure=${var.api_insecure}",
+          "--api.insecure=${var.api_insecure}",
           "--entryPoints.web.address=${var.entrypoints_web_address}",
           "--providers.docker=true",
           "--providers.docker.network=${docker_network.traefik.name}",
