@@ -18,7 +18,16 @@ resource "docker_service" "traefik" {
     container_spec {
       image = docker_image.traefik.latest
 
-      args = var.args
+      args = concat(
+        [
+          "--api-insecure=${var.api_insecure}",
+          "--entryPoints.web.address=${var.entrypoints_web_address}",
+          "--providers.docker=true",
+          "--providers.docker.network=${docker_network.traefik.name}",
+          "--providers.docker.exposedByDefault=${var.providers_docker_exposed_by_default}",
+          "--providers.docker.swarmMode=${var.providers_docker_swarm_mode}"
+        ],
+      var.args)
 
       mounts {
         read_only = true
