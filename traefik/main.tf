@@ -59,13 +59,14 @@ resource "docker_service" "traefik" {
   }
 
   endpoint_spec {
-    ports {
-      target_port    = 80
-      published_port = 80
-    }
-    ports {
-      target_port    = 8080
-      published_port = 8080
+    dynamic "ports" {
+      for_each = var.published_ports
+      content {
+        protocol       = ports.value["protocol"]
+        target_port    = ports.value["target_port"]
+        published_port = ports.value["published_port"]
+        publish_mode   = ports.value["publish_mode"]
+      }
     }
   }
 }

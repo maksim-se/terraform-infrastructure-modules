@@ -49,3 +49,31 @@ variable "args" {
   description = "Additional command arguments to pass traefik. https://docs.traefik.io/v2.0/reference/static-configuration/cli/"
   default     = []
 }
+
+variable "published_ports" {
+  type = list(
+    object(
+      {
+        protocol       = string,
+        target_port    = number,
+        published_port = number,
+        publish_mode   = string
+      }
+    )
+  )
+  description = "Ports traefik should directly export"
+  default = [
+    {
+      protocol       = "tcp",
+      target_port    = 80,
+      published_port = 80,
+      publish_mode   = "ingress"
+    },
+    {
+      protocol       = "tcp",
+      target_port    = 8080,
+      published_port = 8080,
+      publish_mode   = "ingress"
+    }
+  ]
+}
