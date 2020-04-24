@@ -62,6 +62,11 @@ resource "docker_service" "drone" {
 resource "docker_service" "drone_runner" {
   name = "${var.service_name}-runner"
 
+  labels {
+    label = "traefik.enalbe"
+    value = "false"
+  }
+
   task_spec {
     container_spec {
       image = docker_image.drone_runner.latest
