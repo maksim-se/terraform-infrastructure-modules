@@ -50,7 +50,7 @@ resource "docker_service" "drone" {
 
       mounts {
         target = "/data"
-        source = "docker_volume.${var.service_name}_data"
+        source = docker_volume.drone_data.name
         type   = "volume"
       }
     }
