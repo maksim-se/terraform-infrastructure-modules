@@ -16,7 +16,7 @@ resource "docker_volume" "drone_data" {
   driver = "local"
   driver_opts = {
     device = ":${var.data_volume_nfs_path}"
-    o      = "addr=${var.volume_nfs_addr},rw,sync"
+    o      = "addr=${var.data_volume_nfs_addr},rw,sync"
     type   = "nfs4"
   }
 }
@@ -63,7 +63,7 @@ resource "docker_service" "drone_runner" {
   name = "${var.service_name}-runner"
 
   labels {
-    label = "traefik.enalbe"
+    label = "traefik.enable"
     value = "false"
   }
 
@@ -82,11 +82,6 @@ resource "docker_service" "drone_runner" {
         source = "/var/run/docker.sock"
         type   = "bind"
       }
-    }
-
-    labels {
-      label = "traefik.enalbe"
-      value = "false"
     }
 
     networks = [var.traefik_network, docker_network.drone.id, var.gitea_network]
