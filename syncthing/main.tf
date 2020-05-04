@@ -3,13 +3,8 @@ resource "docker_image" "syncthing" {
 }
 
 resource "docker_volume" "syncthing_data" {
-  name   = "${var.service_name}_data"
-  driver = "local"
-  driver_opts = {
-    device = ":${var.data_volume_nfs_path}"
-    o      = "addr=${var.volume_nfs_addr},rw,sync"
-    type   = "nfs4"
-  }
+  name   = "${var.gluster_volume}/${var.service_name}_data"
+  driver = "glusterfs:latest"
 }
 
 resource "docker_service" "syncthing" {

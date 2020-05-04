@@ -7,3 +7,9 @@ Implementation of https://terragrunt.gruntwork.io/docs/features/keep-your-terraf
 * [Portainer](./portainer/README.md): [Making Docker Management Easy](https://www.portainer.io)
 * [Gitea](./gitea/README.md): [A painless self-hosted Git service](https://gitea.io)
 * [Minio](./minio/README.md): [Open Source, S3 Compatible, Enterprise Hardened and Really, Really Fast](https://min.io/)
+
+
+## Requirements
+* All Swarm cluster nodes have the [glusterfs-volume-plugin](https://github.com/trajano/docker-volume-plugins/tree/master/glusterfs-volume-plugin) installed
+** Modules expect glusterfs servers to be configured by the plugin
+** Directories must exist on the Gluster filesystem

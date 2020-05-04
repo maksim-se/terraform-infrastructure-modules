@@ -15,8 +15,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | access\_key | Minio Admin Access Key | `string` | n/a | yes |
 | app\_domain | The domain to use for the Traefik routing label | `string` | n/a | yes |
-| data\_volume\_nfs\_addr | NFS address for local volume driver | `string` | n/a | yes |
-| data\_volume\_nfs\_path | NFS path for local volume driver | `string` | n/a | yes |
+| gluster\_volume | GlusterFS volume mount | `string` | n/a | yes |
 | minio\_version | n/a | `string` | `"RELEASE.2020-04-15T19-42-18Z"` | no |
 | secret\_key | Minio Admin Secret Key | `string` | n/a | yes |
 | service\_name | The prefix to use for docker\_service resources in this module | `string` | `"minio"` | no |

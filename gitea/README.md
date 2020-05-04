@@ -14,9 +14,8 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | app\_domain | The domain to use for the Traefik routing label | `string` | n/a | yes |
-| data\_volume\_nfs\_addr | NFS address for local volume driver | `string` | n/a | yes |
-| data\_volume\_nfs\_path | NFS path for local volume driver | `string` | n/a | yes |
 | gitea\_version | n/a | `string` | n/a | yes |
+| gluster\_volume | GlusterFS volume mount | `string` | n/a | yes |
 | run\_mode | For performance and other purposes, change this to prod when deployed to a production environment. | `string` | `"prod"` | no |
 | service\_name | The prefix to use for docker\_service resources in this module | `string` | `"gitea"` | no |
 | traefik\_http\_port | HTTP port for traefik load balancing | `string` | `"3000"` | no |

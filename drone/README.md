@@ -14,14 +14,13 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | app\_domain | The domain to use for the Traefik routing label | `string` | n/a | yes |
-| data\_volume\_nfs\_addr | NFS address for local volume driver | `string` | n/a | yes |
-| data\_volume\_nfs\_path | NFS path for local volume driver | `string` | n/a | yes |
 | drone\_runner\_version | n/a | `string` | `"1.3"` | no |
 | drone\_version | n/a | `string` | `"1.7.0"` | no |
 | gitea\_client\_id | Gitea OAuth client ID | `string` | n/a | yes |
 | gitea\_client\_secret | Gitea OAuth client secret | `string` | n/a | yes |
 | gitea\_network | The network ID to allow service access to Gitea | `string` | n/a | yes |
 | gitea\_server | Gitea server address. ex: https://gitea.company.com | `string` | n/a | yes |
+| gluster\_volume | GlusterFS volume mount | `string` | n/a | yes |
 | initial\_user | The initial administrative account to create | `string` | n/a | yes |
 | rpc\_secret | This is used to authenticate the rpc connection between the server and runners. The server and runner must be provided the same secret value. | `string` | n/a | yes |
 | runner\_capacity | Limits the number of concurrent pipelines that a runner can execute. | `string` | `"2"` | no |

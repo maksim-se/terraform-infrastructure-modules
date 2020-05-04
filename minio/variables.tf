@@ -24,14 +24,9 @@ variable "secret_key" {
   description = "Minio Admin Secret Key"
 }
 
-variable "data_volume_nfs_path" {
+variable "gluster_volume" {
   type        = string
-  description = "NFS path for local volume driver"
-}
-
-variable "data_volume_nfs_addr" {
-  type        = string
-  description = "NFS address for local volume driver"
+  description = "GlusterFS volume mount"
 }
 
 variable "traefik_http_port" {

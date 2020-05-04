@@ -23,13 +23,8 @@ resource "docker_secret" "secret_key" {
 }
 
 resource "docker_volume" "minio_data" {
-  name   = "${var.service_name}_data"
-  driver = "local"
-  driver_opts = {
-    device = ":${var.data_volume_nfs_path}"
-    o      = "addr=${var.data_volume_nfs_addr},rw,sync"
-    type   = "nfs4"
-  }
+  name   = "${var.gluster_volume}/${var.service_name}_data"
+  driver = "glusterfs:latest"
 }
 
 resource "docker_service" "minio" {
