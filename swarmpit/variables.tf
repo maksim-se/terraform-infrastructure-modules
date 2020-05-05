@@ -3,17 +3,29 @@ variable "app_domain" {
   description = "The domain to use for the Traefik routing label"
 }
 
-variable "portainer_version" {
-  type = string
+variable "swarmpit_version" {
+  type    = string
+  default = "1.9"
+}
+
+variable "couchdb_version" {
+  type    = string
+  default = "2.3.0"
+}
+
+variable "influxdb_version" {
+  type    = string
+  default = "1.7"
 }
 
 variable "agent_version" {
-  type = string
+  type    = string
+  default = "2.2"
 }
 
 variable "service_name" {
   type    = string
-  default = "portainer"
+  default = "swarmpit"
 }
 
 variable "traefik_network" {
@@ -28,5 +40,5 @@ variable "gluster_volume" {
 variable "traefik_http_port" {
   type        = string
   description = "HTTP port for traefik load balancing"
-  default     = "9000"
+  default     = "8080"
 }
