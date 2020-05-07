@@ -7,6 +7,7 @@ Implementation of https://terragrunt.gruntwork.io/docs/features/keep-your-terraf
 * [Swarmpit](./swarmpit/README.md): [Operate your docker infrastructure like a champ.](https://swarmpit.io)
 * [Gitea](./gitea/README.md): [A painless self-hosted Git service](https://gitea.io)
 * [Minio](./minio/README.md): [Open Source, S3 Compatible, Enterprise Hardened and Really, Really Fast](https://min.io/)
+* [Registry](./registry/README.md): [The Registry is a stateless, highly scalable server side application that stores and lets you distribute Docker images.](https://docs.docker.com/registry)
 
 
 ## Requirements

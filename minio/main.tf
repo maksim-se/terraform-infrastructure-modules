@@ -44,7 +44,7 @@ resource "docker_service" "minio" {
     container_spec {
       image = docker_image.minio.latest
 
-      args = ["gateway", "nas", "/data"]
+      args = ["server", "/data"]
 
       secrets {
         secret_id   = docker_secret.access_key.id
