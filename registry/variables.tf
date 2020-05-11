@@ -3,6 +3,33 @@ variable "registry_version" {
   default = "2"
 }
 
+variable "registry_ui_version" {
+  type    = string
+  default = "2.0.2"
+}
+
+variable "ui_registry_host" {
+  type        = string
+  description = "The registry hostname and optional port to connect to for API calls"
+}
+
+variable "ui_registry_ssl" {
+  type        = bool
+  default     = false
+  description = "Specify true for this if the registry is accessed via HTTPS"
+}
+
+variable "ui_registry_domain" {
+  type        = string
+  description = "This is the registry domain to display in the UI for example push/pull code"
+}
+
+variable "storage_delete_enabled" {
+  type        = bool
+  default     = false
+  description = "See: https://github.com/jc21/docker-registry-ui#deletion-support"
+}
+
 variable "service_name" {
   type        = string
   default     = "registry"
@@ -18,6 +45,12 @@ variable "traefik_http_port" {
   type        = string
   description = "HTTP port for traefik load balancing"
   default     = "5000"
+}
+
+variable "traefik_http_ui_port" {
+  type        = string
+  description = "HTTP port for traefik load balancing of UI"
+  default     = "80"
 }
 
 variable "app_domain" {
