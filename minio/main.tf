@@ -23,7 +23,7 @@ resource "docker_secret" "secret_key" {
 }
 
 resource "docker_volume" "minio_data" {
-  name   = "${var.gluster_volume}/${var.service_name}_data"
+  name   = "${var.gluster_volume}/${var.service_name}"
   driver = "glusterfs:latest"
 }
 

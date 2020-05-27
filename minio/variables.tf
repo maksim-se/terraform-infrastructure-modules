@@ -1,6 +1,5 @@
 variable "minio_version" {
-  type    = string
-  default = "RELEASE.2020-04-15T19-42-18Z"
+  type = string
 }
 
 variable "service_name" {
