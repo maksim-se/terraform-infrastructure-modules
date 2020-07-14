@@ -20,6 +20,6 @@ No requirements.
 
 | Name | Description |
 |------|-------------|
-| images | n/a |
+| images | The images created by this module. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

@@ -22,8 +22,8 @@ No requirements.
 
 | Name | Description |
 |------|-------------|
-| images | n/a |
-| networks | n/a |
-| pools | n/a |
+| images | Images available on the libvirt host. |
+| networks | Networks available on the librit host. |
+| pools | Storage pools available on the libvirt host. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

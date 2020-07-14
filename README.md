@@ -2,11 +2,13 @@
 
 Implementation of https://terragrunt.gruntwork.io/docs/features/keep-your-terraform-code-dry/
 
-* [Traefik](./traefik/README.md): [The Cloud Native Edge Router](https://containo.us/traefik/)
-* [Minio](./minio/README.md): [Open Source, S3 Compatible, Enterprise Hardened and Really, Really Fast](https://min.io/)
+* [libvirt_host](./libvirt_host/README.md): Defines a libvirt host's pools, networks, and available images.
+* [libvirt_vm](./minio/README.md): Defines KVM instances on a libvirt host.
+Allows usage of pools, networks, and images defined by the output of [libvirt_host](./libvirt_host/README.md).
 
 
 ## Requirements
-* All Swarm cluster nodes have the [glusterfs-volume-plugin](https://github.com/trajano/docker-volume-plugins/tree/master/glusterfs-volume-plugin) installed
-** Modules expect glusterfs servers to be configured by the plugin
-** Directories must exist on the Gluster filesystem
+* [libvirt](https://libvirt.org/)
+* [terraform](https://terraform.io)
+* [terraform-provider-libvirt](https://github.com/dmacvicar/terraform-provider-libvirt)
+* [terragrunt](https://terragrunt.gruntwork.io/)
