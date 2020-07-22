@@ -29,12 +29,13 @@ variable "autostart" {
 
 variable "networks" {
   type = list(object({
-    network_id  = string,
-    interface   = string,
-    ip_address  = string,
-    gateway     = string,
-    nameservers = list(string),
-    domain      = string
+    network_id    = string,
+    interface     = string,
+    prefix        = string,
+    hostnum_start = number,
+    gateway       = string,
+    nameservers   = list(string),
+    domain        = string
   }))
   description = "List of networks to configure"
   default     = []

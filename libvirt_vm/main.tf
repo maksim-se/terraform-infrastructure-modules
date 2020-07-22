@@ -32,6 +32,7 @@ resource "libvirt_cloudinit_disk" "cloud_init" {
   network_config = templatefile(
     "./templates/network_config.cfg",
     {
+      instance = count.index
       networks = var.networks
     }
   )
