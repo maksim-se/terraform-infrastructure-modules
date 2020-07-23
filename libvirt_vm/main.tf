@@ -9,7 +9,7 @@ resource "libvirt_volume" "os" {
 
 resource "libvirt_volume" "data" {
   for_each = {
-    for item in setproduct((range(1, var.instances)), var.additional_volumes) :
+    for item in setproduct(range(1, var.instances + 1), var.additional_volumes) :
     "${var.name}${item[0]}-${item[1].name}" => item[1]
   }
   name   = each.key
