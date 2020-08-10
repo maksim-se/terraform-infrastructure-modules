@@ -43,6 +43,7 @@ resource "libvirt_domain" "vm" {
   name       = "${var.name}${count.index + 1}"
   memory     = var.memory
   vcpu       = var.vcpu
+  autostart  = var.autostart
   qemu_agent = true
 
   cloudinit = libvirt_cloudinit_disk.cloud_init[count.index].id
