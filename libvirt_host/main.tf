@@ -15,6 +15,6 @@ resource "libvirt_pool" "pool" {
 
 module "images" {
   source = "./modules/images"
-  pool   = libvirt_pool.pool[var.image_pool].name
+  pool   = var.image_pool
   images = var.images
 }
